@@ -1,7 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
-import com.android.build.OutputFile
+import com.android.build.OutputFile 
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -77,6 +77,11 @@ def enableProguardInReleaseBuilds = false
  * this variant is about 6MiB larger per architecture than default.
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
+
+project.ext.react = [
+ enableHermes: true // <- here | clean and rebuild if changing
+]
+
 
 /**
  * Private function to get the list of Native Architectures you want to build.
